@@ -1,0 +1,20 @@
+name : fullstack2
+services : 
+  frontend :
+    depends_on :
+      - backend
+    container_name : frontend-container
+    build :
+      context : ./frontend
+      dockerfile : Dockerfile.prod
+    image : frontend-image
+    ports :
+      - "80:80"
+  backend :
+    container_name : backend-container
+    build :
+      context : ./backend
+      dockerfile : Dockerfile
+    image : backend-image
+    ports :
+      - "5000:5000"
