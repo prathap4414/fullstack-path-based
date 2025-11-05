@@ -52,7 +52,9 @@ jobs:
             sudo docker stop frontend-container || true
             sudo docker rm frontend-container || true
 
-            sudo docker build -t frontend-image .
+            sudo docker rm frontend-image || true
+
+            sudo docker build -t frontend-image -f ./Dockerfile.prod .
             sudo docker run -d -p 80:80 --name frontend-container frontend-image
             echo "✅ Frontend deployed successfully"
 
@@ -76,6 +78,7 @@ jobs:
 
               sudo docker stop backend-container || true
               sudo docker rm backend-container || true
+              sudo docker rm backend-image || true
 
               sudo docker build -t backend-image .
               sudo docker run -d -p 5000:5000 --name backend-container backend-image
