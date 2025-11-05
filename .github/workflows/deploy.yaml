@@ -46,7 +46,7 @@ jobs:
             sudo systemctl enable docker
 
             rm -rf fullstack-path-based
-            git clone https://github.com/<your-username>/<your-repo>.git
+            git clone https://github.com/prathap4414/fullstack-path-based.git
             cd fullstack-path-based/frontend
 
             sudo docker stop frontend-container || true
@@ -71,7 +71,7 @@ jobs:
               sudo systemctl enable docker
 
               rm -rf fullstack-path-based
-              git clone https://github.com/<your-username>/<your-repo>.git
+              git clone https://github.com/prathap4414/fullstack-path-based.git
               cd fullstack-path-based/backend
 
               sudo docker stop backend-container || true
