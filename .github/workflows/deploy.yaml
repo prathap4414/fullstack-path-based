@@ -53,7 +53,7 @@ jobs:
             sudo docker rm frontend-container || true
 
             sudo docker build -t frontend-image .
-            sudo docker run -d -p 80:3000 --name frontend-container frontend-image
+            sudo docker run -d -p 80:80 --name frontend-container frontend-image
             echo "✅ Frontend deployed successfully"
 
             # -----------------------------------------------------
